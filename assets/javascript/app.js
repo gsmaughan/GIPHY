@@ -45,26 +45,28 @@ function animate(){
           console.log(response);
           // storing the data from the AJAX request in the results variable
           var results = response.data;
-
           
-          for (var i = 0; i < results.length; i++) {
 
-            
+          for (var i = 0; i < results.length; i++) {
+            var addDiv = $("<div class='wrapper'>");
             var characterDiv = $("#characters");
+
+            var p = $("<p>").text("Rating: " + results[i].rating);
             var characterImage = $("<img>");
-            
+
             characterImage.attr("src", results[i].images.fixed_height_still.url);
             characterImage.attr("data-still", results[i].images.fixed_height_still.url);
             characterImage.attr("data-animate", results[i].images.original.url);
             characterImage.attr("data-state", "still");
             characterImage.attr("class", "gif");
             
-            characterDiv.append(p);
-            characterDiv.append(characterImage);
-
-            var p = $("<p>").text("Rating: " + results[i].rating);
             
-            $("#characters").append(characterDiv);
+
+            // addDiv.text("Rating: " + results[i].rating);
+            addDiv.append(p);
+            addDiv.append(characterImage);
+            
+            $("#characters").append(addDiv);
           } //for results
         }); //then
 

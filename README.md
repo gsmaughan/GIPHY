@@ -1,1 +1,3 @@
-# GIPHY
+This homework assignment was to create a list of buttons from an array.  I chose to have an array of Looney Tunes characters.  When a button is clicked, ten gifs of that character will appear on the screen.  These gifs can be animated or still if the user clicks on the image.  
+
+The user can also add a character by typing a name in the input box and clicking on submit.  This character is added into the array, the button div is cleared, and new buttons are generated from the updated array, which includes the user's input.  
